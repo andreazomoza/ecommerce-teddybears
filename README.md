@@ -5,4 +5,4 @@
 
 # by Andrea Zomoza
 
-<p align="center"> <h3># Trabajo Final - Fullstack Developer - Soy Henry! </h3><img src="https://static.wixstatic.com/media/85087f_aea1beb8237842df9471fd9ccf51f099~mv2.png/v1/fill/w_161,h_31,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG-min.webp" width="100"/></p> 
+<p align="center"> <h3># Trabajo Final - Full Stack Developer - www.soyhenry.com</h3><img src="https://static.wixstatic.com/media/85087f_aea1beb8237842df9471fd9ccf51f099~mv2.png/v1/fill/w_161,h_31,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG-min.webp" width="150"/></p> 
