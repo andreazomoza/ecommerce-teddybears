@@ -1,0 +1,8 @@
+.title-container label{
+    color: purple;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content:center;
+}
