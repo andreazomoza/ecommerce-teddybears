@@ -1,9 +1,10 @@
-import { ADD_MOVIE, REMOVE_MOVIE,  MOVIE_DETAIL, TRAER_TODO } from "../constants/action-types";
+import { ADD_MOVIE, REMOVE_MOVIE,  MOVIE_DETAIL, TRAER_TODO, SEARCH_PROD } from "../constants/action-types";
 
 const initialState = {
   movies: [],
   moviesLoaded: [],
   movieDetail: {},
+  productoBuscado: {},
   productos: [],
 };
 
@@ -29,7 +30,12 @@ function rootReducer(state = initialState, action) {
       return{
         ...state,
         productos: action.payload
-      }
+      };
+    case SEARCH_PROD:
+      return {
+        ...state,
+        movieDetail: {...action.payload}
+      };
     default:
       return state
   }

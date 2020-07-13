@@ -2,8 +2,8 @@ const Product = (sequelize, S) => {
   // defino el modelo
   const Product = sequelize.define('product', {
     id: {
-      primaryKey: true,
       type: S.INTEGER,
+      primaryKey: true,
     },
     nombre: {
       type: S.STRING,
