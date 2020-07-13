@@ -6,16 +6,17 @@ import Home from '../src/componentes/home/Home';
 import Productos from '../src/componentes/Producto/Producto';
 import Crud from '../src/componentes/Crud/Crud';
 import './App.css';
-import Buscador from '../src/componentes/Buscador/Buscador';
-
+import Buscador from '../src/componentes/Buscador/Buscador.jsx';
 import Login from './componentes/login/Login';
+import store from './redux/store/index';
+import {Provider} from 'react-redux';
 
 
 function App() {
   return (
     <React.Fragment>
-      <NavBar />
-      <Route exact path='/' component ={Buscador}/>
+      <NavBar className='n'/>
+      <Route exact path='/' component ={Home}/>
       <Route path='/Productos' component={Productos}/>
       <Route path='/crud' component={Crud}/>
       <Route path='/cart' component={Cart}/>

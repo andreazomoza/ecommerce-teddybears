@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+.n{
+  z-index: 10; 
+  background-color: #1a1a1a; 
+  position: sticky;
+  top: 15px;
+}
+.n-inverse{
+  z-index: 10; 
+  background-color: #1a1a1a; 
+  position: sticky;
+  top: 15px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

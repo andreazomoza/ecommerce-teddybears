@@ -3,12 +3,13 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #9c89b8;
+    background-color: #bea7e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
+    position: sticky;
 }
 
 .navbar nav{

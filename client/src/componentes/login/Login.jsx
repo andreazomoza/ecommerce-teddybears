@@ -17,9 +17,9 @@ const Login = () => {
         <div className='login-container'>
             <Title text='soy un titulo'/>
             <Label text='usuario'/>
-            <Input/>            />
-            <Label text='contraseña'/>
-            <Input/>
+            <Input/>            
+            <Label  text='contraseña'/>
+            <Input />
 
         </div>
     );

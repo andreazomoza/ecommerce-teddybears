@@ -1,13 +1,10 @@
-import React, {component} from 'react';
-import {connect} from 'react-redux' ;
-import {link} from 'react-router-dom';
+import React,{Component, Link} from 'react'
 import './Crud.css'
 
-export default function Crud(){
-    return(
 
-        <div>soy Crud</div>
+export default function Crud (){
+  return(
+    <div>soy un crud</div>
+  )
+}
 
-    )
-
-};

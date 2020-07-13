@@ -1,53 +1,49 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux' ;
+import {traerTodo} from '../../redux/actions/index'
 import {link} from 'react-router-dom';
-//import 'Productos.css'
+import './Producto.css'
+import Card from '../Card/Card';
 
-export default function Productos(){
-    const [todos, setTodos]=useState([])
-    const getTodos = async () => {
-        try{
-            const response = await fetch("http://localhost:3000/pern");
-            const jsonData = await response.json();
-            setTodos(jsonData);
-        }catch (err){
-            console.error(err.message);
-        }
+
+export class Cart  extends Component {
+     
+  componentDidMount(){
+    this.props.traerTodo()
+  }
+   
+   
+  render() {
+      
+    return (  
+      <div className="prod-Cards">
+        {this.props.productos.map((el,i)=>  
+          <Card 
+            key={i}
+            nombre ={el.nombre}
+            descripcion ={el.descripcion}
+            precio = {el.precio}
+            img = {el.img}
+          />
+        )}
+      </div>      
+     )
     }
-    
-    useEffect(()=> {
-        getTodos();
-    },[]);
-    
-    let todos2 = (JSON.stringify(todos));
-    console.log(todos);
-    console.log(todos2+'todos2');
-    return(
-        <Fragment><div>soy productos</div>
-            <table class="table mt-5 text-center">
-                <thead>
-                <tr>
-                    <th>nombre</th>
-                    <th>descripcion</th>
-                    <th>imagen</th>
-                    <th>agregar</th>
-                    <th>borrar</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {todos.map(todo=>(
-                        <tr>
-                            <td>{todo.nombre}</td>
-                            <td>{todo.descripcion}</td>
-                            <td><img src={todo.img} alt=""/></td>
-                        </tr>
-                       
-                    ))}
-                </tbody>
-            </table>
-        </Fragment>
-        
+  }  
 
-    )
+function mapStateToProps(state) {
+  return {
+    productos: state.productos,
+  };
+}
 
-};
+function mapDispatchToProps(dispatch) {
+  return {
+    traerTodo:(data)=>dispatch(traerTodo(data)),
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Cart)

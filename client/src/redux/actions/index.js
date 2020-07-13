@@ -1,4 +1,4 @@
-import { ADD_MOVIE, REMOVE_MOVIE , DATA_LOADED , MOVIE_DETAIL } from "../constants/action-types";
+import { ADD_MOVIE, REMOVE_MOVIE , MOVIE_DETAIL, TRAER_TODO } from "../constants/action-types";
 
 export function addArticle(payload) {
   return { type: ADD_MOVIE, payload };
@@ -8,17 +8,17 @@ export function removeArticle(payload) {
   return { type: REMOVE_MOVIE, payload };
 }
 
-export function getData() {
+
+export function traerTodo() {
   return function(dispatch) {
-    return fetch("http://localhost:3000/pern")
+    return fetch("http://localhost:3000/traertodo")
       .then(response => response.json())
       .then(json => {
-        dispatch({ type: DATA_LOADED, payload: json });
+        dispatch({ type: TRAER_TODO, payload: json });
         
       });
   };
 }
-
 export function getMovieDetail(id) {
   return function(dispatch) {
     console.log('iddd',id)

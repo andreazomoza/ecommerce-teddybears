@@ -1,0 +1,10 @@
+.b{
+    border-radius: 72px 72px 72px 72px;
+    -moz-border-radius: 72px 72px 72px 72px;
+    -webkit-border-radius: 72px 72px 72px 72px;
+    border: 0px solid #bea7e0;
+    background-color: #bea7e0;
+    align-self: center;
+    width: 150px;
+    height: 50px;
+}
