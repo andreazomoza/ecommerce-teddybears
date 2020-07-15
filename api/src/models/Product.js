@@ -1,21 +1,19 @@
 const Product = (sequelize, S) => {
   // defino el modelo
   const Product = sequelize.define('product', {
-    id: {
-      type: S.INTEGER,
-      primaryKey: true,
-    },
     nombre: {
       type: S.STRING,
-    },
+    },  
     descripcion: {
       type: S.STRING,
     },
     precio: {
       type: S.INTEGER,
+      
     },
     img: {
       type: S.STRING,
+      
     },
    
   });

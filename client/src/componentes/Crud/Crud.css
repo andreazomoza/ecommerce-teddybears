@@ -6,3 +6,10 @@
     margin: 20px auto;
     background-color: lavender;
 }
+
+.form-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

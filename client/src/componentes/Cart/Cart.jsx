@@ -1,45 +1,73 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux' ;
-import {traerTodo} from '../../redux/actions/index'
-import {link} from 'react-router-dom';
-import Crud from '../Crud/Crud';
-import Card from '../Card/Card';
+import {agregarProd} from '../../redux/actions/index'
+
+
 //import './Carrito.css
 
+
+
+
+
 export class Cart  extends Component {
-     
-    componentDidMount(){
-    this.props.traerTodo()
-    }
+ 
+  
+  
+  
+
+  
+
    
-   
-    render() {
+  render() {
       
-     return (
+    return (
         
-        <div>
-            Soy un carrito
-        </div>
+      <div>soy un crud
+      <form className="form-container" action="" onSubmit={this.handleSubmit}>
+        <p><label>Nombre </label></p>
+        <p><input type="text" id="nombre" ref={this.myRef}></input></p>
+        {/*<p><label>descripcion </label></p>
+        <p><input type="text" value={descripcion} onChange={e => SetDescripcion(e.target.value)}></input></p>
+        <p><label>precio </label></p>
+        <p><input type="text" value={precio} onChange={e => SetPrecio(e.target.value)}></input></p>
+        <p><label>img </label></p>
+        <p><input type="text" value={img} onChange={e => SetImg(e.target.value)}></input></p>*/}
+        
+        <button type='submit'>AGREGAR</button>
+      </form>
+      </div>        
 
        
              
-     )
-     }
-   }  
+    )
+  }
+}  
 
-function mapStateToProps(state) {
+/*function mapStateToProps(state) {
    
     return {
       productos: state.productos,
       
     };
+}*/
+
+function mapStateToProps(state){
+  return{
+    newproducto: state.agregarProd
+  }
 }
 
-function mapDispatchToProps(dispatch) {
+/*function mapDispatchToProps(dispatch) {
     return {
-      traerTodo:(data)=>dispatch(traerTodo(data)),
+      agregarProd:(data)=>dispatch(agregarProd(data)),
       
     };
+}*/
+
+function mapDispatchToProps(dispatch){
+  return{
+    agregarProd: newproducto => dispatch(newproducto(newproducto)),
+  }
 }
 
 export default connect(

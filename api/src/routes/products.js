@@ -44,4 +44,20 @@ router.post('/agregarprod', (req, res, next) => {
       .catch(next);
 })
 
+
+router.post('/new', (req, res) => {
+    const {nombre, descripcion, precio, img} = req.body;
+    
+    Product.create({
+      nombre: nombre,
+      descripcion: descripcion,
+      precio: precio,
+      img: img,
+    })
+    .then(newProduct => {
+        res.send(newProduct);
+    }) 
+    .catch(err => res.send(err.message));
+});
+
 module.exports = router;

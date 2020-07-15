@@ -1,12 +1,6 @@
-import { ADD_MOVIE, REMOVE_MOVIE , MOVIE_DETAIL, TRAER_TODO, SEARCH_PROD } from "../constants/action-types";
+import { TRAER_TODO, SEARCH_PROD, AGREGAR_PROD } from "../constants/action-types";
 
-export function addArticle(payload) {
-  return { type: ADD_MOVIE, payload };
-}
 
-export function removeArticle(payload) {
-  return { type: REMOVE_MOVIE, payload };
-}
 
 
 export function traerTodo() {
@@ -30,14 +24,20 @@ export function searchProd(id) {
       });
   }
 }
-export function getMovieDetail(id) {
-  return function(dispatch) {
-    console.log('iddd',id)
-    const url = `http://www.omdbapi.com/?apikey=20dac387&i=${id}&plot=full`
-    return fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        dispatch({ type: MOVIE_DETAIL, payload: json });
-      });
+
+
+
+export function agregarProd (datos){
+  return function(dispatch){
+      return fetch.post('http://localhost:3000/products/agregarprod',{
+              nombre: datos.nombre,
+              descripcion: datos.descripcion,
+              precio: datos.precio,
+              img: datos.img
+      })
+      .then(response =>response.data) 
+      .then(data => {
+          dispatch({ type: AGREGAR_PROD , payload: data})
+      })
   }
 }
